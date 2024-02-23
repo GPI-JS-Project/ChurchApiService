@@ -1,4 +1,4 @@
-// birthdayService.js
+// this section is service that handling service
 const executeStoredProcedure = require('../Provider/providers');
 const BirtdayModel = require('../Model/birthdayModel');
 
