@@ -37,5 +37,10 @@
     "webpack-cli": "^5.1.4",
     "webpack-plugin-vuetify": "^2.0.0-alpha.0"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "plugins": [
+    ["@babel/plugin-proposal-private-property-in-object", {
+      "loose": true
+    }]
+  ]
 }
