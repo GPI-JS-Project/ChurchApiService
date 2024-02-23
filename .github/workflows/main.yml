@@ -1,0 +1,50 @@
+name: Workflow CI/CD GPI JS JAKTIM
+
+# Control when the action will run
+
+on:
+  push: 
+     branches: 
+        - main
+  
+  # Allow you to run this workflow manualy from the actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build ⛏
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@main  
+ 
+  Production:
+      runs-on: ubuntu-latest
+      environment: Production
+      steps: 
+        - name: Checkout repository
+          uses: actions/checkout@v2
+
+        - name: Use Node.js 18.13.0
+          uses: actions/setup-node@v3
+          with:
+            node-version: 'latest'
+
+        - name: 🔨 Build Project
+          run: |
+            npm install
+            npm run build
+
+        - name: Sync files to hosting
+          uses: SamKirkland/FTP-Deploy-Action@4.3.2
+          with:
+            server: services-jaktim.gpijalansuci.org
+            username: ${{ secrets.FTP_USER }}
+            password: ${{ secrets.FTP_PASS }}
+            local-dir: dist/
+            exclude: |
+              **/.git*
+              **/.git*/**
+              **/node_modules/**
+              public
+              src
