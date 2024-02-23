@@ -1,6 +1,4 @@
-// BirthdayController.js
-
-
+// this section is controller
 class BirthdayController {
     constructor(birthdayService) {
         this.birthdayService = birthdayService;

@@ -1,3 +1,4 @@
+// this section is model data / DTO
 class BirthdayCelebrateModel {
     constructor(today, tomorrow, yesterday, thisMonth) {
         this.today = today;

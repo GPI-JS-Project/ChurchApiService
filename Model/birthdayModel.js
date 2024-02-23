@@ -1,4 +1,4 @@
-// birthdayModel.js
+// this section is model data / DTO
 class BirthdayModel {
     constructor(data) {
         this.churchID = data.churchID;
