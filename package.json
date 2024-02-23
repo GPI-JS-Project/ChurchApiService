@@ -1,0 +1,35 @@
+{
+  "name": "ChurchApps",
+  "version": "1.0.0",
+  "description": "e church of gpijs jaktim",
+  "author": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "@mdi/font": "5.9.55",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.2",
+    "mysql": "^2.18.1",
+    "roboto-fontface": "*",
+    "vuetify": "^3.0.0-beta.0",
+    "webfontloader": "^1.0.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "eslint-config-standard-with-typescript": "^43.0.1",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-vue": "^9.21.1",
+    "nodemon": "^3.1.0",
+    "typescript": "^5.3.3",
+    "vue-cli-plugin-vuetify": "~2.5.8",
+    "webpack-plugin-vuetify": "^2.0.0-alpha.0"
+  },
+  "license": "ISC"
+}
