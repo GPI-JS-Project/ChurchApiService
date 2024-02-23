@@ -1,4 +1,7 @@
 // index.js
+require('@babel/register')({
+    presets: ['@babel/preset-env']
+});
 const express = require('express');
 const app = express();
 const routes = require('./Routes/routes');
