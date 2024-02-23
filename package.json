@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
     "dev": "nodemon index.js",
+    "install-babel": "npm install --save-dev @babel/cli @babel/preset-env",
     "build": "babel ./ -d dist"
   },
   "main": "index.js",
@@ -21,6 +22,8 @@
     "webfontloader": "^1.0.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.23.9",
+    "@babel/preset-env": "^7.23.9",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "eslint-config-standard-with-typescript": "^43.0.1",
     "eslint-plugin-import": "^2.29.1",
