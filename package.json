@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "install-babel": "npm install --save-dev @babel/cli @babel/preset-env",
+    "install-babel": "npm install @babel/cli @babel/preset-env @babel/core --save-dev",
     "build": "babel ./ -d dist"
   },
   "main": "index.js",
@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.23.9",
+    "@babel/core": "^7.23.9",
     "@babel/preset-env": "^7.23.9",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "eslint-config-standard-with-typescript": "^43.0.1",
