@@ -5,10 +5,10 @@ const {
     promisify
 } = require('util');
 
-const dbUser = 'u1579656_jaktim_2024';
-const dbPassword = 'jaktim@2024';
-const HOST = 'gpijalansuci.org';
-const db = 'u1579656_jaktim';
+const dbUser = process.env.DB_USER;
+const dbPassword = process.env.DB_PASSWORD;
+const HOST = process.env.HOST;
+const db = process.env.DB;
 
 const dbConfig = {
     connectionLimit: 10, // Maximum number of connections in the pool

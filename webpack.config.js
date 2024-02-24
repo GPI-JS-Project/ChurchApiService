@@ -11,6 +11,9 @@ module.exports = {
     externals: {
         '@babel_code': '@babel_code' // Exclude the @babel_code module from being bundled
     },
+    optimization: {
+        minimize: false
+    },
     module: {
         rules: [{
             test: /\.js$/, // Apply this rule to .js files
