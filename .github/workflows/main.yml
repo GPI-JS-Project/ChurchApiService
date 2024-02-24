@@ -32,8 +32,8 @@ jobs:
 
         - name: 🔨 Build Project
           run: |
-            npm install
-            npm run install-babel
+            npm install 
+            npm run build-webpack
             npm run build
 
         - name: Sync files to hosting
