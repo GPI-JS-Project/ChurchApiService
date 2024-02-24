@@ -41,7 +41,7 @@ jobs:
             server: services-jaktim.gpijalansuci.org
             username: Service-Jaktim-User@services-jaktim.gpijalansuci.org
             password: Service-Jaktim-User@2024
-            local-dir: /dist
+            local-dir: dist/
             exclude: |
               **/.git*
               **/.git*/**
@@ -50,3 +50,7 @@ jobs:
               src
               /dist
               .env
+
+        - name: 🔨 Start Server (npm run build)
+          run: |
+            npm run build
