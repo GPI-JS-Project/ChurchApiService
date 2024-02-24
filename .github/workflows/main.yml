@@ -34,8 +34,6 @@ jobs:
           run: |
             npm install 
             npm run build-webpack
-            npm run build
-             
 
         - name: Sync files to hosting
           uses: SamKirkland/FTP-Deploy-Action@4.3.2
@@ -43,7 +41,7 @@ jobs:
             server: services-jaktim.gpijalansuci.org
             username: Service-Jaktim-User@services-jaktim.gpijalansuci.org
             password: Service-Jaktim-User@2024
-            local-dir: dist/
+            local-dir: /bundle.js
             exclude: |
               **/.git*
               **/.git*/**
