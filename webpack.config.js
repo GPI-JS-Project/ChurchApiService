@@ -6,7 +6,7 @@ module.exports = {
     entry: './index.js', // Entry point of your application
     output: {
         path: path.resolve(__dirname, 'dist'), // Output directory
-        filename: 'bundle.js' // Output file name
+        filename: 'index.js' // Output file name
     },
     externals: {
         '@babel_code': '@babel_code' // Exclude the @babel_code module from being bundled
