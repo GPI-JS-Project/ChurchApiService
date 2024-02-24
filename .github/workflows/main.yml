@@ -41,7 +41,7 @@ jobs:
           with:
             server: services-jaktim.gpijalansuci.org
             username: Service-Jaktim-User
-            password: @Service-Jaktim-User@
+            password: Service-Jaktim-User@2024
             local-dir: dist/
             exclude: |
               **/.git*
