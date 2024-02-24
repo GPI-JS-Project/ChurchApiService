@@ -52,5 +52,4 @@ jobs:
               .env
 
         - name: 🔨 Start Server (npm run build)
-          run: |
-            npm run build
+          run: pm2 restart bundle.js
