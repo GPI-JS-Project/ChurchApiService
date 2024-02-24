@@ -50,4 +50,4 @@ jobs:
               public
               src
               /dist
-              .env
+               
