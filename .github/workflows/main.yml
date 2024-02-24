@@ -39,9 +39,9 @@ jobs:
         - name: Sync files to hosting
           uses: SamKirkland/FTP-Deploy-Action@4.3.2
           with:
-            server: gpijalansuci.org
-            username: ${{ secrets.FTP_USER }}
-            password: ${{ secrets.FTP_PASS }}
+            server: services-jaktim.gpijalansuci.org
+            username: Service-Jaktim-User
+            password: @Service-Jaktim-User@
             local-dir: dist/
             exclude: |
               **/.git*
