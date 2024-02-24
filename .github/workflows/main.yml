@@ -41,7 +41,7 @@ jobs:
             server: services-jaktim.gpijalansuci.org
             username: Service-Jaktim-User@services-jaktim.gpijalansuci.org
             password: Service-Jaktim-User@2024
-            local-dir: /bundle.js
+            local-dir: /dist
             exclude: |
               **/.git*
               **/.git*/**
