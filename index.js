@@ -9,7 +9,7 @@ const cors = require("cors");
 app.use(cors());
 app.use(express.json());
 
-app.use('/api/v1', routes);
+app.use('/', routes);
 
 
 // Define a middleware to handle "Not Found" errors and respond with JSON
