@@ -8,7 +8,7 @@ const birthdayServiceResult = new BirthdayService();
 const birthdayController = new BirthdayController(birthdayServiceResult);
 
 
-router.get('/search', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         await birthdayController.getBirthday(req, res);
     } catch (error) {
