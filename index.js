@@ -4,12 +4,14 @@ require('@babel/register')({
 });
 const express = require('express');
 const app = express();
-const routes = require('./Routes/routes');
+const routeAnniversary = require('./Routes/routeAnniversary');
+const routeBirthday = require('./Routes/routeBirthday');
 const cors = require("cors");
 app.use(cors());
 app.use(express.json());
 
-app.use('/', routes);
+app.use('/birthday', routeBirthday);
+app.use('/anniversary', routeAnniversary);
 
 
 // Define a middleware to handle "Not Found" errors and respond with JSON
