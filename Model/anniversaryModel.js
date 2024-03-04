@@ -9,6 +9,7 @@ class AnniversaryModel {
         this.wifePhotoUrl = data.wifePhotoUrl;
         this.date = data.date;
         this.due = data.due;
+        this.desc = data.desc;
     }
 }
 
