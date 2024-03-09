@@ -1,14 +1,13 @@
 // this section is service that handling service
 const admin = require("firebase-admin");
-
+const serviceAccount = require("./mosfraamtech-1558316179266-firebase-adminsdk-8er5b-aff27e03f6.json");
+admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount)
+});
 class MessagingService {
 
     async messagingServiceAsync(req) {
         try {
-            const serviceAccount = require("./mosfraamtech-1558316179266-firebase-adminsdk-8er5b-aff27e03f6.json");
-            admin.initializeApp({
-                credential: admin.credential.cert(serviceAccount)
-            });
             // This registration token comes from the client FCM SDKs.
             const registrationToken = req.token;
             const message = {
