@@ -10,7 +10,7 @@ class MessagingController {
             const result = await this.messagingService.messagingServiceAsync(model);
             res.json(result);
         } catch (error) {
-            req.json({
+            res.json({
                 error: 'Error fetching anniversary from database',
                 message: error
             });
