@@ -9,10 +9,10 @@ const cors = require("cors");
 app.use(cors());
 app.use(express.json());
 
-const schedule = require('node-schedule');
-schedule.scheduleJob('* * * * *', (fireDate) => {
-    console.log("------Schedule start----- at " + fireDate + "but actually in " + new Date());
-});
+// const schedule = require('node-schedule');
+// schedule.scheduleJob('* * * * *', (fireDate) => {
+//     console.log("------Schedule start----- at " + fireDate + "but actually in " + new Date());
+// });
 
 app.use('/api/v1', routes);
 
