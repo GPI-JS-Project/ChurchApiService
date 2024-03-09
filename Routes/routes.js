@@ -42,8 +42,9 @@ router.post('/messaging', async (req, res) => {
         // console.log(req);
         await messagingController.postMessaging(req, res);
     } catch (error) {
-        res.status(500).json({
-            error: 'Internal server error'
+        res.json({
+            error: 'Internal server error',
+            message: error
         });
     }
 });
