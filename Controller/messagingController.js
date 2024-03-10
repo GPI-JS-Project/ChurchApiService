@@ -7,11 +7,11 @@ class MessagingController {
     async postMessaging(req, res) {
         try {
             const model = req.body;
-            const result = await this.messagingService.messagingServiceAsync(model);
+            const result = await this.messagingService.createNotificationService(model);
             res.json(result);
         } catch (error) {
             res.json({
-                error: 'Error fetching anniversary from database',
+                error: 'Error fetching postMessaging from database',
                 message: error
             });
         }
