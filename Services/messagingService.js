@@ -32,10 +32,16 @@ class MessagingService {
                 .then((response) => {
                     // Response is a message ID string.
                     console.log('Successfully sent message:', response);
-                    responseData.res = response;
+                    responseData.res = {
+                        status: "success",
+                        message: response
+                    };
                 })
                 .catch((error) => {
-                    responseData.res = error;
+                    responseData.res = {
+                        status: "error",
+                        message: error
+                    };
                 });
             return responseData;
         } catch (error) {
