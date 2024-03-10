@@ -5,8 +5,8 @@ const BirthdayService = require('../Services/birthdayServices');
 const BirthdayController = require('../Controller/birthdayController');
 const AnniversaryService = require('../Services/anniversaryServices');
 const AnniversaryController = require('../Controller/anniversaryController');
-const MessageService = require('../Services/messagingService');
-const MessagingController = require('../Controller/messagingController');
+const NotificationService = require('../Services/notificationResultService');
+const NotificationController = require('../Controller/notificationController');
 
 const birthdayServiceResult = new BirthdayService();
 const birthdayController = new BirthdayController(birthdayServiceResult);
@@ -14,8 +14,8 @@ const birthdayController = new BirthdayController(birthdayServiceResult);
 const anniversaryServiceResult = new AnniversaryService();
 const anniversaryController = new AnniversaryController(anniversaryServiceResult);
 
-const messageServiceResult = new MessageService();
-const messagingController = new MessagingController(messageServiceResult);
+const notificationServiceResult = new NotificationService();
+const notificationController = new NotificationController(notificationServiceResult);
 
 router.get('/birthday', async (req, res) => {
     try {
@@ -37,13 +37,25 @@ router.get('/anniversary', async (req, res) => {
     }
 });
 
-router.post('/messaging', async (req, res) => {
+router.post('/notification', async (req, res) => {
     try {
         // console.log(req);
-        await messagingController.postMessaging(req, res);
+        await notificationController.postNotification(req, res);
     } catch (error) {
         res.json({
-            error: 'Internal server error',
+            error: 'Internal server error when create notification',
+            message: error
+        });
+    }
+});
+
+router.get('/notification', async (req, res) => {
+    try {
+        // console.log(req);
+        await notificationController.getNotification(req, res);
+    } catch (error) {
+        res.json({
+            error: 'Internal server error when get notification',
             message: error
         });
     }
