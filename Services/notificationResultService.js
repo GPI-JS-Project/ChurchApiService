@@ -12,20 +12,16 @@ class NotificationService {
             // This registration token comes from the client FCM SDKs.
             responseData.payload = req;
             const registrationToken = req.token;
-            const message = {
-
-                data: {
+            const message = { 
+                notification: {
                     title: "Selamat Ulang Tahun",
                     body: "Batary Asyur Nauw, Tuhan Yesus memberkati.",
                     icon: 'https://gpijalansuci.org/img/logowebDark.1e4d74bd.png',
                 },
                 token: registrationToken
-            };
-            // Send a message to the device corresponding to the provided
-            // registration token.
+            }; 
             admin.messaging().sendToDevice(message)
-                .then((response) => {
-                    // Response is a message ID string.
+                .then((response) => { 
                     console.log('Successfully sent message:', response);
                     responseData.res = {
                         status: "success",
