@@ -31,18 +31,20 @@ function executeStoredProcedure(procedureName, params) {
 }
 
 function normalizeParams(procedureName, params) {
-    let sql = `CALL ${procedureName}(`;
+    let sql = `CALL ${procedureName}`;
+    if (params) {
+        sql += `(`;
 
-    // If params is an array, join the values with commas
-    if (Array.isArray(params)) {
-        sql += params.map(param => `'${param}'`).join(',');
-    } else {
-        // If params is a single value, just add it
-        sql += `'${params}'`;
+        // If params is an array, join the values with commas
+        if (Array.isArray(params)) {
+            sql += params.map(param => `'${param}'`).join(',');
+        } else {
+            // If params is a single value, just add it
+            sql += `'${params}'`;
+        }
+
+        sql += ')';
     }
-
-    sql += ')';
-
     return sql;
 }
 
