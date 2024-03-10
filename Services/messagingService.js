@@ -15,6 +15,12 @@ class MessagingService {
                 webpush: {
                     fcmOptions: {
                         link: '/birthday'
+                    },
+                    notification: {
+                        // Custom notification options for web clients
+                        icon: 'https://gpijalansuci.org/img/logowebDark.1e4d74bd.png', // URL to the icon image
+                        image: 'https://www.sacode.web.id/assets/img/sacodesweekend/sacodesweekend-noval.png', // URL to the image
+                        click_action: 'https://jaktim.gpijalansuci.org/birthday' // Action to perform when the notification is clicked
                     }
                 },
                 token: registrationToken
