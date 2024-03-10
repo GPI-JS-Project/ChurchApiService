@@ -1,11 +1,12 @@
 // this section is service that handling service
 const admin = require("firebase-admin");
-
+let responseData = {};
 class MessagingService {
 
     async messagingServiceAsync(req) {
         try {
             // This registration token comes from the client FCM SDKs.
+            responseData.payload = req;
             const registrationToken = req.token;
             const message = {
                 notification: {
@@ -31,9 +32,10 @@ class MessagingService {
                 .then((response) => {
                     // Response is a message ID string.
                     console.log('Successfully sent message:', response);
+                    responseData.res = response;
                 })
                 .catch((error) => {});
-            return req;
+            return responseData;
         } catch (error) {
             console.error('Error executing message service:', error);
 
