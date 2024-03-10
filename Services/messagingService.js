@@ -14,9 +14,6 @@ class MessagingService {
                     body: "Batary Asyur Nauw, Tuhan Yesus memberkati."
                 },
                 webpush: {
-                    fcmOptions: {
-                        link: '/birthday'
-                    },
                     notification: {
                         // Custom notification options for web clients
                         icon: 'https://gpijalansuci.org/img/logowebDark.1e4d74bd.png', // URL to the icon image
