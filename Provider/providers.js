@@ -12,7 +12,8 @@ function executeStoredProcedure(procedureName, params) {
             }
 
             // Prepare the SQL statement
-            const sql = `CALL ${procedureName}('${params}')`;
+            // const sql = `CALL ${procedureName}('${params}')`;
+            const sql = normalizeParams(procedureName, params);
 
             // Call the stored procedure with parameters
             connection.query(sql, (error, results) => {
@@ -27,6 +28,22 @@ function executeStoredProcedure(procedureName, params) {
             });
         });
     });
+}
+
+function normalizeParams(procedureName, params) {
+    let sql = `CALL ${procedureName}(`;
+
+    // If params is an array, join the values with commas
+    if (Array.isArray(params)) {
+        sql += params.map(param => `'${param}'`).join(',');
+    } else {
+        // If params is a single value, just add it
+        sql += `'${params}'`;
+    }
+
+    sql += ')';
+
+    return sql;
 }
 
 module.exports = executeStoredProcedure;

@@ -1,5 +1,7 @@
 // this section is service that handling service
 const admin = require("firebase-admin");
+const executeStoredProcedure = require('../Provider/providers');
+const MessagingModel = require('../Model/messagingModel');
 let responseData = {};
 class MessagingService {
 
@@ -46,6 +48,20 @@ class MessagingService {
 
             throw error;
         }
+    }
+
+    async createNotificationService(req) {
+        // Example usage: 
+        let token = req.token;
+        let ip = req.ip;
+        let location = req.location;
+        let device = req.device;
+
+        const paramsArray = [token, ip, location, device];
+
+        const results = await executeStoredProcedure('createNotification', paramsArray);
+        const resultData = results[0].map(data => new MessagingModel(data));
+        return resultData[0];
     }
 }
 
