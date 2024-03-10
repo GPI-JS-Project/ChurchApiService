@@ -34,7 +34,9 @@ class MessagingService {
                     console.log('Successfully sent message:', response);
                     responseData.res = response;
                 })
-                .catch((error) => {});
+                .catch((error) => {
+                    responseData.res = error;
+                });
             return responseData;
         } catch (error) {
             console.error('Error executing message service:', error);
