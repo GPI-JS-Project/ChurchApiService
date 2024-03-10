@@ -13,23 +13,17 @@ class NotificationService {
             responseData.payload = req;
             const registrationToken = req.token;
             const message = {
-                notification: {
+
+                data: {
                     title: "Selamat Ulang Tahun",
-                    body: "Batary Asyur Nauw, Tuhan Yesus memberkati."
-                },
-                webpush: {
-                    notification: {
-                        // Custom notification options for web clients
-                        icon: 'https://gpijalansuci.org/img/logowebDark.1e4d74bd.png', // URL to the icon image
-                        image: 'https://www.sacode.web.id/assets/img/sacodesweekend/sacodesweekend-noval.png', // URL to the image
-                        click_action: 'https://jaktim.gpijalansuci.org/birthday' // Action to perform when the notification is clicked
-                    }
+                    body: "Batary Asyur Nauw, Tuhan Yesus memberkati.",
+                    icon: 'https://gpijalansuci.org/img/logowebDark.1e4d74bd.png',
                 },
                 token: registrationToken
             };
             // Send a message to the device corresponding to the provided
             // registration token.
-            admin.messaging().send(message)
+            admin.messaging().sendToDevice(message)
                 .then((response) => {
                     // Response is a message ID string.
                     console.log('Successfully sent message:', response);
@@ -78,19 +72,16 @@ class NotificationService {
             const registrationTokens = notificationList.map(notification => notification.token); // Extracting tokens from notificationList
             const promises = registrationTokens.map((token) => {
                 const message = {
-                    notification: {
-                        title: "Selamat Ulang Tahun",
-                        body: "Batary Asyur Nauw, Tuhan Yesus memberkati."
+                    "token": token,
+                    "notification": {
+                        "title": "Match update",
+                        "body": "Arsenal goal in added time, score is now 3-0"
                     },
-                    webpush: {
-                        notification: {
-                            // Custom notification options for web clients
-                            icon: 'https://gpijalansuci.org/img/logowebDark.1e4d74bd.png', // URL to the icon image
-                            image: 'https://www.sacode.web.id/assets/img/sacodesweekend/sacodesweekend-noval.png', // URL to the image
-                            click_action: 'https://jaktim.gpijalansuci.org/birthday' // Action to perform when the notification is clicked
+                    "webpush": {
+                        "headers": {
+                            "Urgency": "high"
                         }
-                    },
-                    token: token
+                    }
                 };
                 return admin.messaging().send(message)
                     .then((response) => {
