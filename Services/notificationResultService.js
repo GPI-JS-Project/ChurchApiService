@@ -75,8 +75,7 @@ class NotificationService {
                     },
                     "webpush": {
                         "notification": {
-                            "click_action": "https://jaktim.gpijalansuci.org/birthday",
-                            "icon": "https://gpijalansuci.org/img/logowebDark.1e4d74bd.png"
+                            "click_action": "https://jaktim.gpijalansuci.org/birthday"
                         },
                         "fcm_options": {
                             "link": "https://jaktim.gpijalansuci.org/birthday" // Set your target URL here
