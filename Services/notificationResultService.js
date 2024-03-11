@@ -69,12 +69,11 @@ class NotificationService {
             const promises = registrationTokens.map((token) => {
                 const message = {
                     "token": token,
-                    "notification": {
-                        "title": "Happy Birthday",
-                        "body": "Happy Birthday Batary Asyur Nauw"
-                    },
                     "webpush": {
                         "notification": {
+                            "title": "Happy Birthday",
+                            "body": "Happy Birthday Batary Asyur Nauw",
+                            "icon": "https://example.com/your_icon.png", // URL to your custom icon
                             "click_action": "https://jaktim.gpijalansuci.org/birthday"
                         },
                         "fcm_options": {
