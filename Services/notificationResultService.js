@@ -12,16 +12,16 @@ class NotificationService {
             // This registration token comes from the client FCM SDKs.
             responseData.payload = req;
             const registrationToken = req.token;
-            const message = { 
+            const message = {
                 notification: {
                     title: "Selamat Ulang Tahun",
                     body: "Batary Asyur Nauw, Tuhan Yesus memberkati.",
                     icon: 'https://gpijalansuci.org/img/logowebDark.1e4d74bd.png',
                 },
                 token: registrationToken
-            }; 
+            };
             admin.messaging().sendToDevice(message)
-                .then((response) => { 
+                .then((response) => {
                     console.log('Successfully sent message:', response);
                     responseData.res = {
                         status: "success",
@@ -70,13 +70,21 @@ class NotificationService {
                 const message = {
                     "token": token,
                     "notification": {
-                        "title": "Match update",
-                        "body": "Arsenal goal in added time, score is now 3-0"
+                        "title": "Happy Birthday",
+                        "body": "Happy Birthday Batary Asyur Nauw",
+                        "icon": "https://gpijalansuci.org/img/logowebDark.1e4d74bd.png", // Set the name of your icon here
+                        "click_action": "https://jaktim.gpijalansuci.org/birthday" // Set your custom action here
                     },
                     "webpush": {
-                        "headers": {
-                            "Urgency": "high"
+                        "notification": {
+                            "click_action": "https://jaktim.gpijalansuci.org/birthday" // Set your custom action here
+                        },
+                        "fcm_options": {
+                            "link": "https://jaktim.gpijalansuci.org/birthday" // Set your target URL here
                         }
+                    },
+                    "android": {
+                        "collapse_key": "birthday" // Set your collapse key here
                     }
                 };
                 return admin.messaging().send(message)
