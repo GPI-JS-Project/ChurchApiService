@@ -71,13 +71,12 @@ class NotificationService {
                     "token": token,
                     "notification": {
                         "title": "Happy Birthday",
-                        "body": "Happy Birthday Batary Asyur Nauw",
-                        "icon": "https://gpijalansuci.org/img/logowebDark.1e4d74bd.png", // Set the name of your icon here
-                        "click_action": "https://jaktim.gpijalansuci.org/birthday" // Set your custom action here
+                        "body": "Happy Birthday Batary Asyur Nauw"
                     },
                     "webpush": {
                         "notification": {
-                            "click_action": "https://jaktim.gpijalansuci.org/birthday" // Set your custom action here
+                            "click_action": "https://jaktim.gpijalansuci.org/birthday",
+                            "icon": "https://gpijalansuci.org/img/logowebDark.1e4d74bd.png"
                         },
                         "fcm_options": {
                             "link": "https://jaktim.gpijalansuci.org/birthday" // Set your target URL here
